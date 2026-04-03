@@ -1,6 +1,6 @@
 # Deployment doesn't work on Alpine
 FROM php:7.3-cli AS deployer
-ENV OSTICKET_VERSION=1.14.3
+ENV OSTICKET_VERSION=1.15.8
 RUN set -x \
     && apt-get update \
     && apt-get install -y git-core \
@@ -15,7 +15,7 @@ RUN set -x \
     && chmod -R go= /data/upload/setup_hidden
 
 FROM php:7.3-fpm-alpine
-MAINTAINER Martin Campbell <martin@campbellsoftware.co.uk>
+MAINTAINER Ronald Derksen <ronald@derksen-it.nl>
 # environment for osticket
 ENV HOME=/data
 # setup workdir
